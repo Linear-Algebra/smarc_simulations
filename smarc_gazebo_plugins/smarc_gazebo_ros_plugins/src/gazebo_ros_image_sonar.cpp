@@ -884,7 +884,7 @@ cv::Mat GazeboRosImageSonar::ConstructScanImage(cv::Mat& depth, cv::Mat& SNR)
 	  else {
 		z = d*sqrt(y*y + z*z);
       }
-      x *= z; y *= z;
+      x *= d; y *= d;
 
 	  int pi = scan.rows - 1 - int(z/range*mapped_range);
 	  int pj = scan.cols/2 + int(x/range*mapped_range);
